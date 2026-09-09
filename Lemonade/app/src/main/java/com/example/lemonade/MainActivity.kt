@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -38,10 +39,12 @@ fun LemonadeScreen(modifier: Modifier = Modifier) {
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(R.drawable.lemon_tree),
-            contentDescription = stringResource(R.string.lemon_tree)
-        )
+        Button (onClick = {}) {
+            Image (
+                painter = painterResource(R.drawable.lemon_tree),
+                contentDescription = stringResource(R.string.lemon_tree)
+            )
+        }
     }
 }
 
