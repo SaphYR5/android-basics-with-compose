@@ -42,9 +42,12 @@ fun LemonadeScreen(modifier: Modifier = Modifier) {
         Button (onClick = {}) {
             Image (
                 painter = painterResource(R.drawable.lemon_tree),
-                contentDescription = stringResource(R.string.lemon_tree)
+                contentDescription = stringResource(R.string.lemon_tree_description)
             )
         }
+        Text (
+            text = stringResource(R.string.lemon_tree)
+        )
     }
 }
 
