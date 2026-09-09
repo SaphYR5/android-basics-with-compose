@@ -84,7 +84,7 @@ fun LemonadeScreen(modifier: Modifier = Modifier) {
 fun LemonadeApp() {
     LemonadeTheme {
         LemonadeScreen(modifier = Modifier
-            .fillMaxWidth()
+            .fillMaxSize()
             .wrapContentSize(Alignment.Center)
         )
     }
