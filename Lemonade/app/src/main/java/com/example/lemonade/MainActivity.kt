@@ -44,6 +44,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun LemonadeScreen(modifier: Modifier = Modifier) {
     var stage by remember { mutableIntStateOf(0) }
+    var squeezes by remember { mutableIntStateOf(0) }
+    var pause by remember { mutableStateOf(false) }
 
     val imageResource = when (stage) {
         0 -> R.drawable.lemon_tree
@@ -70,7 +72,24 @@ fun LemonadeScreen(modifier: Modifier = Modifier) {
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button (onClick = { stage = (stage + 1) % 4 }) {
+        Button (onClick =
+            {
+                if (!pause) {
+                    stage = (stage + 1) % 4
+                }
+                if (stage == 1 && !pause) {
+                    pause = true
+                    squeezes = (2..4).random()
+                }
+                else if (stage == 1) {
+                    squeezes -= 1
+                }
+                if (squeezes == 0 && pause) {
+                    pause = false
+                    stage = (stage + 1) % 4
+                }
+            }
+        ) {
             Image (
                 painter = painterResource(imageResource),
                 contentDescription = stringResource(imageDescription)
