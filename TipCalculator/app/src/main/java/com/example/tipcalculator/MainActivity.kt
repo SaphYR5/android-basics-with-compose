@@ -78,7 +78,7 @@ fun TipCalculatorLayout() {
                 .fillMaxWidth()
         )
         Text(
-            text = stringResource(R.string.tip_amount, "$0.00"),
+            text = stringResource(R.string.tip_amount, tip),
             style = MaterialTheme.typography.displaySmall
         )
         Spacer(modifier = Modifier.height(150.dp))
