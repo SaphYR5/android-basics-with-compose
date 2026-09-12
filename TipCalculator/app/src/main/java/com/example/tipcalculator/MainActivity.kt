@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -166,7 +167,8 @@ fun EditNumberField(
     )
 }
 
-private fun calculateTip(
+@VisibleForTesting
+internal fun calculateTip(
     amount: Double,
     tipPercent: Double = 15.0,
     roundUp: Boolean
